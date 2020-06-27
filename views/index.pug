@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+
+  //test login status
+  div
+    if user
+      p Hello, #{user.displayName}
+      div
+        a(href="/logout") ログアウト
+      a(href="/add") 追加
+      
+      h3 リンク
+      - var hasLink = links.length > 0
+      if hasLink
+        ul
+        each link in links
+          li
+            a(href=`${link.url}`) #{link.name}
+    else
+      div
+        a(href="/login") ログイン

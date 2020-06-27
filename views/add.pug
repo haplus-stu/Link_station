@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    form(action="/added", method="post")
+        label(for="save_name") 保存名
+        input(type="text", name="save_name")
+        label(for="url") URL
+        input(type="text", name="url")
+        input(type="submit", value="追加") 
